@@ -1,0 +1,18 @@
+# Исключаем технические папки
+exclude = [
+    ".git",
+    ".venv",
+    "alembic",
+]
+
+line-length = 88
+target-version = "py312"
+
+[lint]
+# Какие правила проверять (E - ошибки, F - логические ошибки, I - сортировка импортов)
+select = ["E", "F", "I", "W"]
+ignore = []
+
+[format]
+quote-style = "double"
+indent-style = "space"
