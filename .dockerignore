@@ -1,0 +1,8 @@
+venv/
+.venv/
+__pycache__/
+.git/
+.gitignore
+alembic/versions/*.pyc
+.mypy_cache/
+.ruff_cache/
