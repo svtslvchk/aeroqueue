@@ -58,7 +58,7 @@ class Task(Base):
         server_default=func.now(),  # Время ставит сама БД в момент создания записи
         nullable=False,
     )
-    
+
     updated_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),
         server_default=func.now(),
