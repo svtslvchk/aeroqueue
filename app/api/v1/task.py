@@ -10,6 +10,8 @@ from app.core.db import get_db_session
 from app.models.task import Task
 from app.schemas.task import TaskCreate, TaskResponse
 
+from app.api.v1.auth import get_current_user
+
 router = APIRouter(tags=["Tasks"])
 
 
@@ -18,7 +20,8 @@ router = APIRouter(tags=["Tasks"])
 @router.post("/", response_model=TaskResponse, status_code=status.HTTP_201_CREATED)
 async def create_task(
     task_in: TaskCreate,
-    db: AsyncSession = Depends(get_db_session)
+    db: AsyncSession = Depends(get_db_session),
+    current_user: dict = Depends(get_current_user)
 ):
     """
     Создание новой задачи в очереди.
